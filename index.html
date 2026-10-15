@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Clínica Aurora · Estética e bem-estar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="skip" href="#principal">Pular para o conteúdo</a>
+    <header>
+      <div class="wrap">
+        <a class="brand" href="#"
+          ><span aria-hidden="true">🌸</span> Clínica Aurora</a
+        >
+        <nav aria-label="Principal">
+          <a href="#recomendador">Recomendação</a
+          ><a href="#servicos">Serviços</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="principal">
+      <div class="wrap hero">
+        <div>
+          <h1>Um cuidado cheio de carinho para o seu dia</h1>
+          <p class="lead">
+            Conta pra gente como você quer se sentir hoje! Com duas
+            perguntinhas, a gente indica o tratamento ideal pra você. Prefere
+            conversar? A Aurora, nossa assistente, está aqui pra ajudar e te
+            levar até o agendamento.
+          </p>
+        </div>
+        <form class="tool" id="recomendador" aria-labelledby="t-rec">
+          <h2 id="t-rec">Vamos achar o seu cuidado ideal?</h2>
+          <fieldset>
+            <legend>Como você quer se sentir hoje?</legend>
+            <div class="chips">
+              <label
+                ><input type="radio" name="goal" value="relax" checked /><span
+                  >Relaxar 🫧</span
+                ></label
+              >
+              <label
+                ><input type="radio" name="goal" value="pele" /><span
+                  >Cuidar da pele ✨</span
+                ></label
+              >
+              <label
+                ><input type="radio" name="goal" value="inchaco" /><span
+                  >Desinchar 💧</span
+                ></label
+              >
+              <label
+                ><input type="radio" name="goal" value="rapido" /><span
+                  >Algo rapidinho ⏱️</span
+                ></label
+              >
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Quanto tempinho você tem?</legend>
+            <div class="chips">
+              <label
+                ><input type="radio" name="time" value="60" checked /><span
+                  >Até 1 hora</span
+                ></label
+              >
+              <label
+                ><input type="radio" name="time" value="120" /><span
+                  >Até 2 horas</span
+                ></label
+              >
+              <label
+                ><input type="radio" name="time" value="999" /><span
+                  >Sem pressa</span
+                ></label
+              >
+            </div>
+          </fieldset>
+          <button class="btn" type="submit">Ver minha recomendação 💗</button>
+          <div id="result" aria-live="polite"></div>
+        </form>
+      </div>
+
+      <div class="wrap">
+        <section class="list" id="servicos" aria-labelledby="t-serv">
+          <h2 id="t-serv">Nossos cuidados</h2>
+          <div id="servicos-lista"></div>
+          <p class="note">Valores de exemplo para fins de demonstração.</p>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <div class="wrap">
+        Clínica Aurora (cliente fictício) | Criado por Bruna Campos · Seg a sex, 9h às 19h · Sáb, 9h às
+        14h · Rua das Flores, 123, Centro
+      </div>
+    </footer>
+
+    <button
+      class="btn"
+      id="fab"
+      type="button"
+      aria-expanded="false"
+      aria-controls="chat"
+    >
+      Conversar com a Aurora 💬
+    </button>
+    <div
+      id="chat"
+      role="dialog"
+      aria-label="Assistente de atendimento da Clínica Aurora"
+    >
+      <div class="chat-head">
+        <span>Assistente Aurora</span
+        ><button type="button" id="close" aria-label="Fechar conversa">
+          ×
+        </button>
+      </div>
+      <div id="log" aria-live="polite"></div>
+      <div class="quick" id="quick"></div>
+      <form id="chatform">
+        <label for="msg" class="skip">Sua mensagem</label>
+        <input id="msg" autocomplete="off" placeholder="Escreva sua dúvida" />
+        <button class="btn" type="submit">Enviar</button>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
