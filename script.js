@@ -1,6 +1,6 @@
 (function () {
   "use strict";
-  var CONFIG = { webhookUrl: "", whatsapp: "5541999999999" };
+  var CONFIG = { webhookUrl: "", whatsapp: "5548999961504" };
 
   var S = [
     { n: "Limpeza de pele profunda", min: 75, p: "R$ 150", t: { pele: 3 }, d: "Remove impurezas e renova a textura da pele." },
