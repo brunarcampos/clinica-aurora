@@ -1,6 +1,6 @@
 (function () {
   "use strict";
-  var CONFIG = { webhookUrl: "", whatsapp: "5548999961504" };
+  var CONFIG = { webhookUrl: "https://hook.us2.make.com/akjbx8568h90btjpqlcq68qcqo7uxhwh", whatsapp: "5548999961504" };
 
   var S = [
     { n: "Limpeza de pele profunda", min: 75, p: "R$ 150", t: { pele: 3 }, d: "Remove impurezas e renova a textura da pele." },
@@ -63,14 +63,13 @@
   async function reply(raw) {
     if (CONFIG.webhookUrl) {
       try {
-        var c = new AbortController(), to = setTimeout(function () { c.abort() }, 6000);
-        var res = await fetch(CONFIG.webhookUrl, {
-          method: "POST", headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ message: raw, history: history.slice(-6) }), signal: c.signal
-        });
+        var c = new AbortController(), to = setTimeout(function () { c.abort() }, 15000);
+        var res = await fetch(CONFIG.webhookUrl + "?message=" + encodeURIComponent(raw), { signal: c.signal });
         clearTimeout(to);
-        var j = await res.json();
-        if (j && j.reply) return { text: j.reply };
+        if (res.ok) {
+          var t = (await res.text()).trim();
+          if (t) return { text: t };
+        }
       } catch (err) { }
     }
     return local(raw);
